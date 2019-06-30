@@ -133,7 +133,7 @@ If you notice a bug or you want to propose improvements feel free to create a pu
 The plugin is licensed under GPL v2
 
 ```
-Copyright (C) 2019 Darko Gjorgjijoski (https://megaoptim.com)
+Copyright (C) 2019 Darko Gjorgjijoski (https://darkog.com)
 
 This file is part of WP Batch Processing
 
