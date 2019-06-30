@@ -103,6 +103,16 @@ add_action( 'wp_batch_processing_init', 'wp_batch_processing_init', 15, 1 );
 
 That's it.
 
+## Hooks
+
+Set delay between processing items. Default is 0 (no delay)
+```php
+function wp_bp_my_custom_delay($delay) {
+   return 2; // in seconds
+}
+add_filter('wp_batch_processing_delay', 'wp_bp_my_custom_delay', 10, 1);
+```
+
 ## Example use cases
 
 The tool can be used in many different ways. For example
