@@ -1,6 +1,6 @@
 # WP Batch Processing
 
-WP Batch Processing is WordPress plugin for creating batches of data and processing those batches. It allows you define a batch and to process the queued batch items one by one or you can continue later if your conenction fails.
+WP Batch Processing is WordPress plugin for creating batches of data and processing the the data items one by one. It allows you to define a batch and to process the queued batch items one by one. There is also option to resume/continue later in case your internet connection goes down.
  
 ![Example](examples/processing.gif)
 
