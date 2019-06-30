@@ -71,8 +71,7 @@ class WP_Batch_Processor_Admin {
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'nonce'    => wp_create_nonce( 'wp-batch-processing' ),
 			'batch_id' => isset( $_GET['id'] ) ? $_GET['id'] : 0,
-			'delay'    => apply_filters( 'dg_batch_runner_delay', 0 ),
-			// Set delay in seconds before processing the next item.
+			'delay'    => apply_filters( 'wp_batch_processing_delay', 0 ), // Set delay in seconds before processing the next item. Default 0. No delay.
 			'text'     => array(
 				'processing' => __( 'Processing...', 'wp-batch-processing' ),
 				'start'      => __( 'Start', 'wp-batch-processing' ),
