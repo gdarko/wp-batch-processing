@@ -31,4 +31,4 @@ require_once 'includes/class-batch-list-table.php';
 require_once 'includes/class-batch-processor-admin.php';
 
 // Examples
-require_once 'examples/class-example-batch.php';
+// require_once 'examples/class-example-batch.php';

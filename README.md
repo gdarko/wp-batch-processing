@@ -43,14 +43,13 @@ if ( class_exists( 'WP_Batch' ) ) {
 		 */
 		public function setup() {
 
-			$posts = get_posts( array(
-				'post_type'      => 'post',
-				'posts_per_page' => 100,
-				'post_status'    => 'publish',
+			$users = get_users( array(
+				'number' => '40',
+				'role'   => 'author',
 			) );
 
-			foreach ( $posts as $post_item ) {
-				$this->push( new WP_Batch_Item( $post_item->ID, array( 'author_id' => $post_item->post_author ) ) );
+			foreach ( $users as $user ) {
+				$this->push( new WP_Batch_Item( $user->ID, array( 'author_id' => $user->ID ) ) );
 			}
 		}
 
