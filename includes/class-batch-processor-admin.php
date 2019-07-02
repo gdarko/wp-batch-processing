@@ -138,7 +138,7 @@ class WP_Batch_Processor_Admin {
 	private function is_batch_runner_screen( $action = null ) {
 		$is_main_screen = isset( $_GET['page'] ) && $_GET['page'] === 'dg-batches';
 		if ( ! is_null( $action ) ) {
-			$is_main_screen = $is_main_screen && $_GET['action'] === $action;
+			$is_main_screen = $is_main_screen && isset($_GET['action']) && $_GET['action'] === $action;
 		}
 
 		return $is_main_screen;
