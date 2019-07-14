@@ -82,6 +82,12 @@ abstract class WP_Batch {
 	 */
 	abstract public function process( $item );
 
+	/**
+	 * Called when specific process is finished (all items were processed).
+	 * This method can be overriden in the process class.
+	 * @return void
+	 */
+	public function finish() {}
 
 	/**
 	 * Queues the item for processing.

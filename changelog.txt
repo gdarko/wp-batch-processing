@@ -1,0 +1,6 @@
+= Version 1.0.1 (2019-07-14) =
+- [New] Added finish() method that can be overriden in the derived classes. It is called when specific batch finished processing.
+- [Fix] Division by zero warnings
+
+= Version 1.0.0 (2019-06-30) =
+- Initial version

@@ -89,6 +89,16 @@ if ( class_exists( 'WP_Batch' ) ) {
 			return true;
 		}
 
+		/**
+		 * Called when specific process is finished (all items were processed).
+		 * This method can be overriden in the process class.
+		 * @return void
+		 */
+		public function finish() {
+			// Do something after process is finished.
+			// You have $this->items, or other data you can set.
+		}
+
 	}
 
 	/**
