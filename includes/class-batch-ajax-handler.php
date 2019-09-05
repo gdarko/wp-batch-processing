@@ -98,7 +98,7 @@ class WP_Batch_Processing_Ajax_Handler {
 					'percentage'      => $percentage,
 				) );
 			} else {
-				$success_message = apply_filters( 'dg_batch_item_success_message', 'Perocessed item with id ' . $next_item->id, $next_item );
+				$success_message = apply_filters( 'dg_batch_item_success_message', 'Processed item with id ' . $next_item->id, $next_item );
 				wp_send_json_success( array(
 					'message'         => $success_message,
 					'is_finished'     => 0,
