@@ -95,9 +95,9 @@ class WP_Batch_Processor {
 	 */
 	private static function load_paths() {
 		if ( ! defined( 'WP_BP_PATH' ) || ! defined( 'WP_BP_URL' ) ) {
-			$path        = trailingslashit( dirname( __FILE__ ) );
+			$path        = trailingslashit( dirname( dirname( __FILE__ ) ) );
 			$content_dir = basename( untrailingslashit( WP_CONTENT_DIR ) );
-			$library_uri = substr( strstr( trailingslashit( dirname( $path ) ), $content_dir ), strlen( $content_dir ) );
+			$library_uri = substr( strstr( trailingslashit( $path ), $content_dir ), strlen( $content_dir ) );
 			$url         = untrailingslashit( WP_CONTENT_URL ) . $library_uri;
 			if ( ! defined( 'WP_BP_PATH' ) ) {
 				define( 'WP_BP_PATH', $path );
