@@ -169,4 +169,3 @@ class WP_Batch_Processor_Admin {
 	}
 }
 
-WP_Batch_Processor_Admin::get_instance();

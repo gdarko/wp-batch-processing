@@ -141,5 +141,3 @@ class WP_Batch_Processing_Ajax_Handler {
 	}
 }
 
-// Init
-WP_Batch_Processing_Ajax_Handler::get_instance();

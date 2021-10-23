@@ -6,15 +6,21 @@ WP Batch Processing is WordPress plugin for creating batches of data and process
 
 ## Installation
 
-You can install this library as a plugin
+1. Install this library as a plugin. It doesn't require anything from below.
 
-or via composer:
+2. Or install it as a composer package (read the **notes** bellow)
 
 ```
 composer require gdarko/wp-batch-processing
 ```
 
-**Note/Optional**: The plugin should be able to find its public path, however if you see messed up screen it means that it was unable to find the stylesheet/JS file and you will need to define them manually before including composer's autoload.php file.
+```php
+WP_Batch_Processor::boot();
+```
+
+**Note**: The boot() method should be called only if you install the plugin via composer somewhere in your plugin or theme.
+
+**Note**: If you are using composer, the plugin should be able to find its public path, however if you see messed up screen it means that it was unable to find the stylesheet/JS file and you will need to define them manually before including composer's autoload.php file.
 
 ```php
 if ( ! defined('WP_BP_PATH')) {

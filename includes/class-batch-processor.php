@@ -78,6 +78,13 @@ class WP_Batch_Processor {
 		return null;
 	}
 
-}
+	/**
+	 * Boot the plugin
+	 */
+	public static function boot() {
+		WP_Batch_Processor_Admin::get_instance();
+		WP_Batch_Processing_Ajax_Handler::get_instance();
+		WP_Batch_Processor::get_instance();
+	}
 
-WP_Batch_Processor::get_instance();
+}
