@@ -20,9 +20,12 @@ WP_Batch_Processor::boot();
 
 **Note**: The boot() method should be called only if you install the plugin via composer somewhere in your plugin or theme.
 
-**Note**: If you are using composer, the plugin should be able to find its public path, however if you see messed up screen it means that it was unable to find the stylesheet/JS file and you will need to define them manually before including composer's autoload.php file.
+**Note**: If using composer, the library will attempt to find its path, however if you see messed up screen it means that it was unable to find the stylesheet/JS file and you will need to define them manually before boot method.
 
 ```php
+// Manually define the path constants to eliminate
+// possible errors when resolving the paths.
+
 if ( ! defined('WP_BP_PATH')) {
     define('WP_BP_PATH', plugin_dir_path(__FILE__));
 }
@@ -31,8 +34,7 @@ if ( ! defined('WP_BP_URL')) {
     define('WP_BP_URL', plugin_dir_url(__FILE__));
 }
 
-// Before this statement.
-require_once 'vendor/autoload.php';
+WP_Batch_Processor::boot();
 
 ```
 

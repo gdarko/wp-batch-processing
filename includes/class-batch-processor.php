@@ -82,9 +82,30 @@ class WP_Batch_Processor {
 	 * Boot the plugin
 	 */
 	public static function boot() {
+		self::load_paths();
 		WP_Batch_Processor_Admin::get_instance();
 		WP_Batch_Processing_Ajax_Handler::get_instance();
 		WP_Batch_Processor::get_instance();
+	}
+
+	/**
+	 * Determine the library URL.
+	 * Note: This won't work if the library is outside of the wp-content directory
+	 * and also contains multiple 'wp-content' words in the path.
+	 */
+	private static function load_paths() {
+		if ( ! defined( 'WP_BP_PATH' ) || ! defined( 'WP_BP_URL' ) ) {
+			$path        = trailingslashit( dirname( __FILE__ ) );
+			$content_dir = basename( untrailingslashit( WP_CONTENT_DIR ) );
+			$library_uri = substr( strstr( trailingslashit( dirname( $path ) ), $content_dir ), strlen( $content_dir ) );
+			$url         = untrailingslashit( WP_CONTENT_URL ) . $library_uri;
+			if ( ! defined( 'WP_BP_PATH' ) ) {
+				define( 'WP_BP_PATH', $path );
+			}
+			if ( ! defined( 'WP_BP_URL' ) ) {
+				define( 'WP_BP_URL', trailingslashit( $url ) );
+			}
+		}
 	}
 
 }
