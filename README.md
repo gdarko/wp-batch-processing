@@ -1,8 +1,37 @@
 # WP Batch Processing
 
-WP Batch Processing is WordPress plugin for creating batches of data and processing the the data items one by one. It allows you to define a batch and to process the queued batch items one by one. There is also option to resume/continue later in case your internet connection goes down.
+WP Batch Processing is WordPress plugin for creating batches of data and processing the data items one by one. It allows you to define a batch and to process the queued batch items one by one. There is also option to resume/continue later in case your internet connection goes down.
  
 ![Example](examples/processing.gif)
+
+## Installation
+
+You can install this library as a plugin
+
+or via composer:
+
+```
+composer require gdarko/wp-batch-processing
+```
+
+**Note/Optional**: The plugin should be able to find its public path, however if you see messed up screen it means that it was unable to find the stylesheet/JS file and you will need to define them manually before including composer's autoload.php file.
+
+```php
+if ( ! defined('WP_BP_PATH')) {
+    define('WP_BP_PATH', plugin_dir_path(__FILE__));
+}
+
+if ( ! defined('WP_BP_URL')) {
+    define('WP_BP_URL', plugin_dir_url(__FILE__));
+}
+
+// Before this statement.
+require_once 'vendor/autoload.php';
+
+```
+
+
+## How it works
 
 To define a batch you just need to extend the class `WP_Batch` and later register it. Follow  the examples below to learn how.
 
@@ -111,7 +140,7 @@ add_action( 'wp_batch_processing_init', 'wp_batch_processing_init', 15, 1 );
 
 That's it.
 
-## Hooks
+## Filters and Actions
 
 Set delay between processing items. Default is 0 (no delay)
 ```php
@@ -141,7 +170,7 @@ If you notice a bug or you want to propose improvements feel free to create a pu
 The plugin is licensed under GPL v2
 
 ```
-Copyright (C) 2019 Darko Gjorgjijoski (https://darkog.com)
+Copyright (C) 2021 Darko Gjorgjijoski (https://darkog.com)
 
 This file is part of WP Batch Processing
 

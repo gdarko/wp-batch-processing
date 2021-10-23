@@ -1,0 +1,20 @@
+{
+  "name": "gdarko/wp-batch-processing",
+  "description": "Easily process large batches of data in WordPress. Provide the data, setup the processing procedure, run the batch processor from the admin dashboard. Profit.",
+  "type": "library",
+  "require": {
+    "php": ">=5.3"
+  },
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Darko Gjorgjijoski",
+      "email": "dg@darkog.com"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "includes/"
+    ]
+  }
+}
