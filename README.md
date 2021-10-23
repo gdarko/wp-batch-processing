@@ -26,14 +26,15 @@ WP_Batch_Processor::boot();
 
 ```php
 // Manually define the path constants to eliminate
-// possible errors when resolving the paths.
+// possible errors when resolving the paths and also
+// include trailing slash at the end.
 
 if ( ! defined('WP_BP_PATH')) {
-    define('WP_BP_PATH', '/path/to/wp-content/plugins/your-plugin/libraries/wp-batch-processing');
+    define('WP_BP_PATH', '/path/to/wp-content/plugins/your-plugin/libraries/wp-batch-processing/');
 }
 
 if ( ! defined('WP_BP_URL')) {
-    define('WP_BP_URL', 'https://site.com/wp-content/plugins/your-plugin/libraries/wp-batch-processing');
+    define('WP_BP_URL', 'https://site.com/wp-content/plugins/your-plugin/libraries/wp-batch-processing/');
 }
 
 WP_Batch_Processor::boot();
