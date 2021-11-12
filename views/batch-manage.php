@@ -29,7 +29,8 @@ $percentage = $batch->get_percentage();
 	<div class="batch-process-actions">
 		<?php if(!$batch->is_finished()): ?>
 			<button class="button-primary" id="batch-process-start">Start</button>
-			<button class="button" id="batch-process-stop">Stop</button>
+			<button class="button" id="batch-process-restart">Restart</button>
+			<button class="button batch-process--button-stop" id="batch-process-stop">Stop</button>
 		<?php else: ?>
 			<button class="button-primary" id="batch-process-restart">Restart</button>
 		<?php endif; ?>
@@ -86,5 +87,10 @@ $percentage = $batch->get_percentage();
     padding-bottom: 5px;
     min-height: 12px;
 }
-
+.batch-process--button-stop {
+    margin-left: 15px !important;
+    border: none !important;
+    background: #990000 !important;
+    color: #ffffff !important;
+}
 </style>
