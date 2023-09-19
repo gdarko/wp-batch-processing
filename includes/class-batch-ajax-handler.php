@@ -75,7 +75,7 @@ class WP_Batch_Processing_Ajax_Handler {
 			$percentage      = $batch->get_percentage();
 			$batch->finish();
 			wp_send_json_success( array(
-				'message'         => apply_filters( 'dg_batch_item_error_message', __( 'Processing finished.', 'wp-batch-processing' ) ),
+				'message'         => apply_filters( 'dg_batch_item_finished_message', __( 'Processing finished.', 'wp-batch-processing' ) ),
 				'is_finished'     => 1,
 				'total_processed' => $total_processed,
 				'total_items'     => $total_items,
