@@ -37,7 +37,7 @@ $processed_count = $batch->get_processed_count();
 
         <div class="batch-process-actions">
 			<?php if ( ! $batch->is_finished() ): ?>
-                <button class="button-primary" id="batch-process-start"><?php $processed_count > 0 && $processed_count < $items_count ? _e('Continue') : _e('Start'); ?></button>
+                <button class="button button-primary" id="batch-process-start"><?php $processed_count > 0 && $processed_count < $items_count ? _e('Continue') : _e('Start'); ?></button>
                 <button class="button" id="batch-process-restart">Restart</button>
                 <button class="button batch-process--button-stop" id="batch-process-stop">Stop</button>
 			<?php else: ?>
