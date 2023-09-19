@@ -31,7 +31,9 @@ $processed_count = $batch->get_processed_count();
                 <div class="batch-process-progress-bar-inner" style="<?php echo $style; ?>"></div>
             </div>
             <div class="batch-process-current-item">
-
+                <?php if($batch->is_finished()): ?>
+                <span class="batch-message-text--green"><?php _e('Process finished!'); ?></span>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -71,6 +73,10 @@ $processed_count = $batch->get_processed_count();
     .batch-process-stats li {
         display: inline-block;
         min-width: 20%;
+    }
+
+    .batch-message-text--green {
+        color: green;
     }
 
     .batch-process-progress-bar-inner {
