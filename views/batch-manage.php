@@ -105,6 +105,7 @@ $processed_count = $batch->get_processed_count();
         max-width: 500px;
         background: #fff;
         margin-top: 15px;
+        border: 1px solid #ddd;
     }
 
     .batch-process-current-item {
