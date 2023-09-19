@@ -88,7 +88,9 @@
 
 	$(document).on('click', '#batch-process-restart', function(e){
 		e.preventDefault();
-		restart_batch();
+		if(confirm(DgBatchRunner.text.confirm_restart)) {
+			restart_batch();
+		}
 	});
 
 

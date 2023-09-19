@@ -76,6 +76,7 @@ class WP_Batch_Processor_Admin {
 			'text'     => array(
 				'processing' => __( 'Processing...', 'wp-batch-processing' ),
 				'start'      => __( 'Start', 'wp-batch-processing' ),
+				'confirm_restart' => __('Are you sure you want to restart? This action can not be reverted.', 'wp-batch-processing')
 			)
 		) );
 	}
